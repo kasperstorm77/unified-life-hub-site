@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — the unified life hub</title>
+  <style>
+    :root { color-scheme: light dark; --fg:#111; --muted:#555; --bg:#fff; --accent:#2a6df4; }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg:#eee; --muted:#aaa; --bg:#0e0e0e; --accent:#7aa8ff; }
+    }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, sans-serif; line-height:1.6; }
+    main { max-width:44rem; margin:4rem auto; padding:0 1.25rem; }
+    h1 { font-size:1.75rem; margin:0 0 .25rem; }
+    h2 { font-size:1.1rem; margin:1.75rem 0 .5rem; }
+    p, li { color:var(--fg); }
+    .muted { color:var(--muted); }
+    ul { padding-left:1.25rem; }
+    a { color:var(--accent); }
+    footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid rgba(128,128,128,.25); color:var(--muted); font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Privacy policy</h1>
+    <p class="muted">Effective: 24 April 2026</p>
+
+    <p>the unified life hub (the "app") is a local-first desktop application. This policy describes what happens to your data when you use it, and specifically when you connect it to Google services.</p>
+
+    <h2>What the app accesses</h2>
+    <p>If you choose to connect a Google account, the app requests only these scopes:</p>
+    <ul>
+      <li><strong>Google Calendar events</strong> (<code>calendar.events</code>) — read and write events on calendars you already own, to keep them in sync with the app.</li>
+      <li><strong>Google Tasks</strong> (<code>tasks</code>) — read and write your tasks, to keep them in sync with the app.</li>
+    </ul>
+    <p>The app does <strong>not</strong> request access to your Gmail, Drive, Contacts, or any other Google product.</p>
+
+    <h2>Where your data is stored</h2>
+    <p>All synced data is stored on your device, inside the app's own folder, encrypted at rest with a password you set. There is no backend server owned or operated by the app's developer. Your notes, tasks, events, and Google data never leave your device except when your device is talking directly to Google's servers to sync.</p>
+
+    <h2>What the developer sees</h2>
+    <p>Nothing. The developer runs no server, operates no analytics, and has no account system. The developer cannot read your data, cannot see that you are using the app, and does not receive usage information.</p>
+
+    <h2>Authentication tokens</h2>
+    <p>When you sign in to Google, a refresh token is stored on your device so the app can keep syncing without asking you to log in every time. That token is stored inside the app's folder on your computer. Sign out to delete it, or revoke the app at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+    <h2>Retention</h2>
+    <p>The app keeps synced data for as long as you keep the app installed. Uninstalling the app (or deleting its folder) removes everything locally. Data already on Google's side is unaffected.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li>Disconnect Google at any time in <em>Settings → Plugins → google → Sign out</em>.</li>
+      <li>Revoke access in your Google account settings.</li>
+      <li>Change your mind about syncing — turn off the plugin without signing out.</li>
+    </ul>
+
+    <h2>Google API Services User Data Policy</h2>
+    <p>The app's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the "Effective" date above is updated and the change is visible in this file's Git history.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:kasperstorm17@gmail.com">kasperstorm17@gmail.com</a></p>
+
+    <footer>
+      <a href="index.html">Home</a> · <a href="terms.html">Terms of service</a>
+    </footer>
+  </main>
+</body>
+</html>
