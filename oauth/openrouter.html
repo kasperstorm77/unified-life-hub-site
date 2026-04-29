@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Returning to Life happens…</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      background: #0E1217; color: #E5E7EB;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    @media (prefers-color-scheme: light) {
+      html, body { background: #FAFBFB; color: #1F2937; }
+    }
+    main { max-width: 28rem; padding: 1.5rem; text-align: center; }
+    h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; }
+    p  { font-size: 0.9rem; line-height: 1.5; margin: 0.25rem 0; opacity: 0.85; }
+    a.btn {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.625rem 1rem;
+      border-radius: 0.5rem;
+      background: #4F46E5; color: #fff;
+      text-decoration: none; font-weight: 600;
+    }
+    code {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      background: rgba(127,127,127,0.15);
+      padding: 0.05rem 0.3rem; border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Returning to Life happens…</h1>
+    <p>If your phone doesn't switch back to the app automatically, tap the button below.</p>
+    <a id="deepLink" class="btn" href="#">Open Life happens</a>
+    <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.6;">
+      You can close this tab.
+    </p>
+  </main>
+  <script>
+    // OpenRouter OAuth-PKCE bridge for the Tauri-on-Android / Tauri-on-iOS
+    // mobile builds. OpenRouter only accepts http(s) callback_url values,
+    // so the app's auth URL points here; this page reads the
+    // ?code=… (or ?error=…) query string and immediately redirects to
+    // `lifehappens://oauth/openrouter?<same-qs>`. Both the app's
+    // AndroidManifest <intent-filter android:scheme="lifehappens"> and
+    // the iOS Info.plist CFBundleURLTypes catch the deep link and
+    // hand it to tauri-plugin-deep-link::onOpenUrl.
+    //
+    // PKCE means the auth code in the URL is useless without the
+    // verifier (which never leaves the app), so this redirect is safe
+    // even though the URL is briefly visible to the user's browser.
+    (function () {
+      var qs = window.location.search || '';
+      var target = 'lifehappens://oauth/openrouter' + qs;
+      var btn = document.getElementById('deepLink');
+      btn.href = target;
+      // Try to redirect immediately. Some browsers (particularly
+      // Safari + WKWebView) need a user gesture to follow custom
+      // URL schemes — the visible button covers that case.
+      window.location.replace(target);
+    }());
+  </script>
+</body>
+</html>
